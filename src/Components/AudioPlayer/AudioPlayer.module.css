@@ -1,0 +1,36 @@
+.music_player {
+  background-color: #3c3f52;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 20px 20px;
+}
+
+.music_player .player_content {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.player_content p {
+  margin: 0;
+  margin-left: 10px;
+  color: aliceblue;
+}
+.player_block {
+  background-color: #535777;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player_block img {
+  width: 50px;
+  height: auto;
+}

@@ -1,0 +1,21 @@
+.music_albums {
+  margin: 70px 45px 0;
+}
+.album_names {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.album_names h6 {
+  border: 2px solid aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.album_names .english {
+  background-color: aliceblue;
+  color: black;
+  box-shadow: 7px 5px 10px rgb(19, 19, 19);
+}

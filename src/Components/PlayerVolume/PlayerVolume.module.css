@@ -1,0 +1,69 @@
+/* Style the volume button */
+.volume_button {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  /* height: auto; */
+}
+.volume_button img {
+  width: 25px;
+  height: 25px;
+  margin-right: 3px;
+}
+.audio_volume {
+  -webkit-appearance: none;
+  width: 100%;
+  background: none;
+}
+
+.audio_volume::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  background: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio_volume::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  background: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio_volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background: rgb(137, 167, 250);
+  margin-top: -5px;
+  cursor: pointer;
+}
+.audio_volume::-moz-range-thumb {
+  /* -webkit-appearance: none; */
+  border: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background: rgb(137, 167, 250);
+  margin-top: -6px;
+  cursor: pointer;
+}
+.audio_volume:focus {
+  outline: none;
+}
+.audio_volume:-moz-focusring {
+  outline: none;
+}
+
+.audio_volume:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+.audio_volume:focus::-moz-range-track {
+  background: #ccc;
+}

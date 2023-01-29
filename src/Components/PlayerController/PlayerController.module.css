@@ -1,0 +1,98 @@
+/* Style the container for the audio player */
+.audio_player {
+  width: 500px;
+}
+
+/* Style the audio controls */
+audio::-webkit-media-controls {
+  display: none;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+.audio_cnt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.audio_cnt img {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* Style the play/pause button */
+.play_pause_button {
+  width: 35px;
+  height: 35px;
+  background-color: #b3b3b3;
+  /* text-align: center;
+  line-height: 35px; */
+  border-radius: 50%;
+  /* float: left;
+    margin-right: 10px; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 15px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  border-style: solid;
+  border-width: 7px 0 7px 12px;
+}
+.paused {
+  border-style: double;
+  border-width: 0px 0px 0px 12px;
+}
+.buttonn:hover {
+  border-color: transparent transparent transparent #404040;
+}
+
+/* Style the progress bar */
+.progress_bar {
+  border: none;
+  height: 4px;
+  background-color: rgb(136, 136, 136);
+  border-radius: 5px;
+  width: 100%;
+  /* float: left; */
+}
+progress::-moz-progress-bar {
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+/* Style the filled portion of the progress bar */
+.progress_bar::-webkit-progress-value {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.audio_time {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.audio_time > p {
+  font-size: 12px;
+  margin: 0;
+  color: aliceblue;
+}

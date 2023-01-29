@@ -1,0 +1,6 @@
+.musics {
+  margin: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}

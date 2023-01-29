@@ -1,0 +1,8 @@
+.audio_player {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 250px;
+  position: relative;
+}

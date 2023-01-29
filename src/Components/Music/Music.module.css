@@ -1,0 +1,28 @@
+.music {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-right: 20px; */
+  cursor: pointer;
+}
+.music_block {
+  background-color: #3c3f52;
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music_block img {
+  width: 130px;
+  height: auto;
+}
+.music p {
+  font-size: 15px;
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+}
