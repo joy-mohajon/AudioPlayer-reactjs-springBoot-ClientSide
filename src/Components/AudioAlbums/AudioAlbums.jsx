@@ -1,20 +1,62 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+
+import fetchAudios from "../../fetchAudios";
 import styles from "./AudioAlbums.module.css";
 
-const AlbamNames = () => {
+const AudioAlbums = () => {
+  const { data } = useQuery("audios", () => fetchAudios());
+
+  const names = ["All"];
+  const [albumNames, setalbumNames] = useState(names);
+
+  const light = new Array(albumNames.length).fill(0);
+  light[0] = 1;
+  const [active, setActive] = useState(light);
+
+  const [album, setAlbum] = useState("");
+
+  useEffect(() => {
+    if (data) {
+      data.forEach(({ language }) => {
+        if (!names.includes(language)) {
+          names.push(language);
+        }
+      });
+    }
+  }, [data]);
+
+  const albumHandler = (album, index) => {
+    album === "All" ? setAlbum("") : setAlbum(album);
+
+    for (let i = 0; i < light.length; i++) {
+      if (index === i) {
+        light[i] = 1;
+      } else {
+        light[i] = 0;
+      }
+    }
+    setActive(light);
+  };
+
   return (
     <div>
-      <div class={styles.music_albums}>
-        <h2>English Album Songs</h2>
+      <div className={styles.music_albums}>
+        <h2>{album} Album Songs</h2>
         <hr />
-        <div class={styles.album_names}>
-          <h6>All</h6>
-          <h6>Bengali</h6>
-          <h6>Hindi</h6>
-          <h6 class={styles.english}>English</h6>
-          <h6>Punjabi</h6>
-          <h6>Banlga</h6>
-          <h6>Tamil</h6>
+        <div className={styles.album_names}>
+          {albumNames &&
+            albumNames.map((name, index) => {
+              return (
+                <h6
+                  key={index}
+                  onClick={() => albumHandler(name, index)}
+                  className={active[index] ? styles.light : ""}
+                >
+                  {name}
+                </h6>
+              );
+            })}
         </div>
         <hr />
       </div>
@@ -22,4 +64,4 @@ const AlbamNames = () => {
   );
 };
 
-export default AlbamNames;
+export default AudioAlbums;

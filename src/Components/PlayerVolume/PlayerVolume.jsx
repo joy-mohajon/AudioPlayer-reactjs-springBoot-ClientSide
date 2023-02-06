@@ -3,17 +3,6 @@ import styles from "./PlayerVolume.module.css";
 import icons8_voice from "../../assets/images/icons8-voice-64.png";
 
 const PlayerVolume = ({ updateVolume }) => {
-  // const [volumeRange, setVolumeRange] = useState(0);
-
-  // useEffect(() => {
-
-  // if (volumeRange <= 0) {
-  //   audioRef.current.muted = true;
-  // } else {
-  //   audioRef.muted = false;
-  //   audioRef.current.volume = volumeRange;
-  // }
-  // }, [volumeRange]);
 
   return (
     <div class={styles.volume_button}>
