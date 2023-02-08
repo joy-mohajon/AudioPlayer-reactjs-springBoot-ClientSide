@@ -1,22 +1,27 @@
-import React from "react";
-import { useQuery } from "react-query";
-import fetchAudios from "../../fetchAudios";
+import React, { useState } from "react";
+
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import Music from "../Music/Music";
 import styles from "./AllAudios.module.css";
 
-const AllAudios = () => {
-  const { data } = useQuery("audios", () => fetchAudios());
-  console.log(data);
+const AllAudios = ({ data }) => {
+  const [details, setDetails] = useState({});
+
+  const detailsHandler = (audioInfo) => {
+    setDetails(audioInfo);
+  };
+
   return (
     <>
       <div className={styles.musics}>
         {data &&
           data.map((audio, index) => {
-            return <Music key={index} audio={audio} />;
+            return (
+              <Music key={index} audio={audio} infoHandler={detailsHandler} />
+            );
           })}
       </div>
-      <AudioPlayer />
+      <AudioPlayer audio={details} />
     </>
   );
 };

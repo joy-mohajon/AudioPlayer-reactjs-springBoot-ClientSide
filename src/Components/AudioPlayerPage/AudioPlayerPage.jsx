@@ -1,14 +1,22 @@
-import React from "react";
+import React, { Suspense } from "react";
 import AudioContainer from "../AudioContainer/AudioContainer";
-import AudioPlayerAuth from "../AudioPlayerAuth/AudioPlayerAuth";
-import styles from "./AudioPlayerPage.module.css";
+import { QueryClientProvider, QueryClient } from "react-query";
 
 const AudioPlayer = () => {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+      },
+    },
+  });
+
   return (
-    <div className={styles.audio_player}>
-      <AudioPlayerAuth />
-      <AudioContainer />
-    </div>
+    <QueryClientProvider client={client}>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <AudioContainer />
+      </Suspense>
+    </QueryClientProvider>
   );
 };
 

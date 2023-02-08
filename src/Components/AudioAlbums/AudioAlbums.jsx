@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
-import fetchAudios from "../../fetchAudios";
+import fetchAudios from "../../fetchdata/fetchAudios";
+import AllAudios from "../AllAudios/AllAudios";
 import styles from "./AudioAlbums.module.css";
 
-const AudioAlbums = () => {
+const AudioAlbums = ({ filterAudio }) => {
   const { data } = useQuery("audios", () => fetchAudios());
+
+  const [audios, setAudios] = useState(data);
 
   const names = ["All"];
   const [albumNames, setalbumNames] = useState(names);
@@ -17,16 +20,18 @@ const AudioAlbums = () => {
   const [album, setAlbum] = useState("");
 
   useEffect(() => {
-    if (data) {
-      data.forEach(({ language }) => {
+    if (audios) {
+      audios.forEach(({ language }) => {
         if (!names.includes(language)) {
           names.push(language);
         }
       });
     }
-  }, [data]);
+  }, []);
 
   const albumHandler = (album, index) => {
+    filterAudio(album);
+
     album === "All" ? setAlbum("") : setAlbum(album);
 
     for (let i = 0; i < light.length; i++) {

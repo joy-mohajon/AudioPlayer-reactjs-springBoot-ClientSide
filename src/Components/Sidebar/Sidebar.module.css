@@ -25,18 +25,29 @@
   width: 35px;
   height: auto;
 }
-.sidebar_text {
-  font-size: 16px;
-  margin-bottom: 20px;
-  opacity: 0.6;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.sidebar_text:hover {
-  opacity: 1;
-}
+
 .sidebar_playlist {
   padding-left: 30px;
   padding-top: 20px;
+}
+.sidebar_content h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.inactive {
+  opacity: 0.6;
+}
+.sidebar_content h5:hover {
+  opacity: 1;
+  font-weight: 700;
+}
+.active {
+  opacity: 1;
+  font-weight: 700;
 }

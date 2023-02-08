@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./AudioPlayerAuth.module.css";
+import { Outlet } from "react-router-dom";
 
 const AudioPlayerAuth = () => {
   return (
-    <div>
-      <div class={styles.main_header}>
-        <button class={`${styles.btn} btn`}>Login</button>
-        <button class={`${styles.btn} btn`}>Signup</button>
+    <div className={styles.audio_player}>
+      <div className={styles.main_header}>
+        <button className={`${styles.btn} btn`}>Login</button>
+        <button className={`${styles.btn} btn`}>Signup</button>
       </div>
+      <Outlet />
     </div>
   );
 };
