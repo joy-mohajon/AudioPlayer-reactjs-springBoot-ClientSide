@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
 import fetchAudios from "../../fetchdata/fetchAudios";
-import AllAudios from "../AllAudios/AllAudios";
 import styles from "./AudioAlbums.module.css";
 
 const AudioAlbums = ({ filterAudio }) => {
@@ -45,26 +44,24 @@ const AudioAlbums = ({ filterAudio }) => {
   };
 
   return (
-    <div>
-      <div className={styles.music_albums}>
-        <h2>{album} Album Songs</h2>
-        <hr />
-        <div className={styles.album_names}>
-          {albumNames &&
-            albumNames.map((name, index) => {
-              return (
-                <h6
-                  key={index}
-                  onClick={() => albumHandler(name, index)}
-                  className={active[index] ? styles.light : ""}
-                >
-                  {name}
-                </h6>
-              );
-            })}
-        </div>
-        <hr />
+    <div className={styles.music_albums}>
+      <h2>{album} Album Songs</h2>
+      <hr />
+      <div className={styles.album_names}>
+        {albumNames &&
+          albumNames.map((name, index) => {
+            return (
+              <h6
+                key={index}
+                onClick={() => albumHandler(name, index)}
+                className={active[index] ? styles.light : ""}
+              >
+                {name}
+              </h6>
+            );
+          })}
       </div>
+      <hr />
     </div>
   );
 };

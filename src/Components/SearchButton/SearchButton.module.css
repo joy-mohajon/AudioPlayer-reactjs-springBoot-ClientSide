@@ -1,0 +1,35 @@
+.searchContainer {
+  margin-top: 90px;
+}
+
+.searchInput > input {
+  width: 100%;
+  height: 40px;
+  max-height: 80%;
+  border-radius: 10px;
+  border: none;
+  background-color: #3c3f52;
+  /* display: block;
+  text-align: center;
+  margin: auto; */
+  /* margin-bottom: 30px; */
+  padding-left: 35px;
+  color: rgb(255, 255, 255);
+  /* margin: 5px 5px; */
+  margin: 8px;
+}
+.searchContainer input:focus {
+  outline: none;
+}
+.searchInput {
+  border: 0.5px solid #5c6077;
+  width: 450px;
+  max-width: 450px;
+  height: 60px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
